@@ -1,10 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+} */
 
 img{
     max-height: 100%;
@@ -23,7 +27,7 @@ label{
     @apply text-gray-600 text-sm;
 }
 .btn-primary{
-  @apply bg-blue-900 text-white px-4 py-1 rounded-sm shadow-sm;
+    @apply bg-primary text-white px-4 py-1 rounded-sm shadow-sm;
 }
 table.basic{
     @apply w-full bg-white rounded-sm shadow-md;
@@ -34,10 +38,7 @@ table.basic thead tr th
     @apply text-sm text-gray-600 uppercase border-b border-gray-200 px-4 py-2;
 }
 table.basic tr td{
-    @apply border border-blue-200 px-4 py-1;
-}
-table.basic thead tr td{
-    @apply bg-blue-100;
+    @apply px-4 py-1;
 }
 table.basic a{
     @apply px-4 rounded-sm inline-flex mx-1 items-center gap-1 text-sm py-1;
@@ -53,11 +54,6 @@ table.basic a{
 }
 
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
 /* @media (prefers-color-scheme: dark) {
   :root {

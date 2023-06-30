@@ -12,7 +12,7 @@ export default function Layout({children}) {
   const { data: session } = useSession();
   if (!session){
     return (
-      <div className={'bg-blue-900 w-screen h-screen flex items-center'}>
+      <div className={'bg-bgGray w-screen h-screen flex items-center'}>
           
           <div className='text-center w-full'>
             <button onClick={() => signIn('google')} className="bg-white p-2 px-4 rounded-lg">Login with Google</button>
@@ -22,7 +22,7 @@ export default function Layout({children}) {
   }
 
   return (
-    <div className="bg-blue-300 min-h-screen"> 
+    <div className="bg-bgGray min-h-screen "> 
       <div className="block md:hidden flex items-center p-4">
         <button onClick={() => setShowNav(true)}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -35,7 +35,7 @@ export default function Layout({children}) {
       </div>
         <div className='flex'>
           <Nav show={showNav}/>
-          <div className="bg-white flex-grow mt-2 mr-2 mb-0 rounded-lg p-4">
+          <div className="flex-grow p-4">
             {children}
           </div>
         </div>
