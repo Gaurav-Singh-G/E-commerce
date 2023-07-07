@@ -101,7 +101,15 @@ export default function CartPage() {
   function lessOfThisProduct(id) {
     removeProduct(id);
   }
-
+  async function goToPayment() {
+    const response = await axios.post('/api/checkout', {
+      name,email,city,postalCode,streetAddress,country,
+      cartProducts,
+    });
+    if (response.data.url) {
+      window.location = response.data.url;
+    }
+  }
   let total = 0;
   for (const productId of cartProducts) {
     const price = products.find(p => p._id === productId)?.price || 0;
@@ -179,8 +187,6 @@ export default function CartPage() {
           {!!cartProducts?.length && (
             <Box>
               <h2>Order information</h2>
-              <form method="post" action="/api/checkout">
-
               <Input type="text"
                      placeholder="Name"
                      value={name}
@@ -213,11 +219,12 @@ export default function CartPage() {
                      value={country}
                      name="country"
                      onChange={ev => setCountry(ev.target.value)}/>
-              <Button black block type="submit">
+              <Button black block 
+              onClick={goToPayment}
+              >
                 Continue to payment
               </Button>
-              
-              </form>
+
             </Box>
           )}
         </ColumnsWrapper>
