@@ -70,7 +70,7 @@ export default function Featured({product}) {
               <Title>
               {product.title}
               </Title>
-              <Desc>
+              <Desc >
               {product.description}
               </Desc>
               <ButtonsWrapper>
